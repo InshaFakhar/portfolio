@@ -1578,6 +1578,150 @@
             border-color: rgba(168,85,247,0.35);
             color: var(--purple-glow);
         }
+
+        /* ===== CERTIFICATES SECTION ===== */
+        #certificates {
+            background: rgba(124,58,237,0.03);
+        }
+
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            transition: all 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+            .cert-card::before {
+                content: '';
+                position: absolute;
+                top: 0; left: 0; right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, var(--purple-accent), var(--pink));
+                border-radius: 20px 20px 0 0;
+            }
+
+            .cert-card:hover {
+                transform: translateY(-6px);
+                border-color: var(--border-hover);
+                box-shadow: 0 20px 60px var(--shadow);
+            }
+
+        .cert-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(236,72,153,0.15));
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .cert-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cert-body h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .cert-issuer {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--purple-glow);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cert-date {
+            font-size: 11px;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .cert-verify {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 50px;
+            text-decoration: none;
+            background: rgba(124,58,237,0.12);
+            border: 1px solid rgba(124,58,237,0.3);
+            color: var(--purple-glow);
+            transition: all 0.3s;
+        }
+
+            .cert-verify:hover {
+                background: rgba(124,58,237,0.25);
+                border-color: var(--purple-bright);
+                transform: translateY(-2px);
+            }
+
+        .cert-no-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--muted);
+            padding: 4px 10px;
+            border-radius: 50px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 768px) {
+            .certs-grid {
+                display: flex;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                gap: 14px;
+                padding-bottom: 14px;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .certs-grid::-webkit-scrollbar { display: none; }
+            .cert-card {
+                min-width: 80vw;
+                max-width: 80vw;
+                flex-shrink: 0;
+                scroll-snap-align: start;
+            }
+        }
+
+        .cert-card:nth-child(1)::before { background: linear-gradient(90deg,#4285F4,#34A853,#FBBC05,#EA4335); }
+        .cert-card:nth-child(2)::before { background: linear-gradient(90deg,#34A853,#4285F4); }
+        .cert-card:nth-child(3)::before { background: linear-gradient(90deg,#f97316,#fbbf24); }
+        .cert-card:nth-child(4)::before { background: linear-gradient(90deg,#0ea5e9,#06b6d4); }
+        .cert-card:nth-child(5)::before { background: linear-gradient(90deg,#a855f7,#ec4899); }
         /* ===== TOUCH DEVICES: hide custom cursor ===== */
         @media (hover: none) and (pointer: coarse) {
             .cursor, .cursor-follower {
@@ -1851,6 +1995,7 @@
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-right">
@@ -1905,7 +2050,7 @@
             <div style="background:linear-gradient(135deg,#1a0533,#2d0a5e);border:1px solid var(--border);border-radius:32px;padding:36px;display:flex;flex-direction:column;gap:20px;">
                 <div class="stat-chip reveal reveal-delay-1" style="text-align:left;display:flex;align-items:center;gap:16px;padding:20px 24px;">
                     <span style="font-size:28px;">🎓</span>
-                    <div><div style="font-weight:700;color:var(--text);font-size:15px;">BSCS — University of Kharian</div><div style="color:var(--muted);font-size:13px;margin-top:3px;">2023–2027 · CGPA 3.49/4.00</div></div>
+                    <div><div style="font-weight:700;color:var(--text);font-size:15px;">BSCS — University of Gujrat</div><div style="color:var(--muted);font-size:13px;margin-top:3px;">2023–2027 · CGPA 3.58/4.00</div></div>
                 </div>
                 <div class="stat-chip reveal reveal-delay-2" style="text-align:left;display:flex;align-items:center;gap:16px;padding:20px 24px;">
                     <span style="font-size:28px;">💼</span>
@@ -1919,7 +2064,7 @@
                     <div class="stat-chip reveal reveal-delay-1"><div class="num">6+</div><div class="lbl">Projects Built</div></div>
                     <div class="stat-chip reveal reveal-delay-2"><div class="num">8+</div><div class="lbl">Technologies</div></div>
                     <div class="stat-chip reveal reveal-delay-3"><div class="num">2+</div><div class="lbl">Years Learning</div></div>
-                    <div class="stat-chip reveal reveal-delay-4"><div class="num">3.49</div><div class="lbl">CGPA</div></div>
+                    <div class="stat-chip reveal reveal-delay-4"><div class="num">3.58</div><div class="lbl">CGPA</div></div>
                 </div>
             </div>
         </div>
@@ -2029,6 +2174,11 @@
                 <div class="skill-icon">🐙</div>
                 <h3>Git & GitHub</h3>
                 <div class="skill-level"><span class="lvl-badge lvl-web">Version Ctrl</span></div>
+            </div>
+            <div class="skill-card reveal reveal-delay-3">
+                <div class="skill-icon">🗄️</div>
+                <h3>SQL</h3>
+                <div class="skill-level"><span class="lvl-badge lvl-python">Queries</span></div>
             </div>
             <div class="skill-card reveal reveal-delay-3">
                 <div class="skill-icon">🟩</div>
@@ -2203,6 +2353,105 @@
                     </button>
                 </form>
             </div>
+        </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ===== CERTIFICATES ===== -->
+    <section id="certificates">
+        <div class="section-head reveal">
+            <div class="tag">Achievements</div>
+            <h2>Certificates &amp;<br><span>Credentials ✦</span></h2>
+            <p>5 verified certifications from Google, DigiSkills, CodeAlpha &amp; University of Gujrat</p>
+        </div>
+
+        <div class="certs-grid">
+
+            <!-- Google AI Professional Certificate -->
+            <div class="cert-card reveal reveal-delay-1">
+                <div class="cert-icon" style="background:linear-gradient(135deg,rgba(66,133,244,0.2),rgba(234,67,53,0.15));border-color:rgba(66,133,244,0.3);">🤖</div>
+                <div class="cert-body">
+                    <h4>Google AI Professional Certificate</h4>
+                    <div class="cert-issuer" style="color:#4285F4;"><i class="fa-brands fa-google"></i> Google · Coursera</div>
+                    <div class="cert-date">📅 June 28, 2026 · 7 Courses</div>
+                    <div class="cert-tags" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(66,133,244,0.1);border:1px solid rgba(66,133,244,0.25);color:#4285F4;">AI Fundamentals</span>
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(66,133,244,0.1);border:1px solid rgba(66,133,244,0.25);color:#4285F4;">Brainstorming</span>
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(66,133,244,0.1);border:1px solid rgba(66,133,244,0.25);color:#4285F4;">Data Analysis</span>
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(66,133,244,0.1);border:1px solid rgba(66,133,244,0.25);color:#4285F4;">+4 more</span>
+                    </div>
+                    <a href="https://coursera.org/verify/professional-cert/25JNDH2V783R" target="_blank" class="cert-verify">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Certificate
+                    </a>
+                </div>
+            </div>
+
+            <!-- Google AI Essentials -->
+            <div class="cert-card reveal reveal-delay-2">
+                <div class="cert-icon" style="background:linear-gradient(135deg,rgba(52,168,83,0.2),rgba(66,133,244,0.15));border-color:rgba(52,168,83,0.3);">✨</div>
+                <div class="cert-body">
+                    <h4>Google AI Essentials</h4>
+                    <div class="cert-issuer" style="color:#34A853;"><i class="fa-brands fa-google"></i> Google · Coursera</div>
+                    <div class="cert-date">📅 July 2, 2026 · 5 Courses</div>
+                    <div class="cert-tags" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(52,168,83,0.1);border:1px solid rgba(52,168,83,0.25);color:#34A853;">AI Tools</span>
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(52,168,83,0.1);border:1px solid rgba(52,168,83,0.25);color:#34A853;">Prompting</span>
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(52,168,83,0.1);border:1px solid rgba(52,168,83,0.25);color:#34A853;">Productivity</span>
+                    </div>
+                    <a href="https://coursera.org/verify/specialization/WNCC0O6KIP8D" target="_blank" class="cert-verify">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Certificate
+                    </a>
+                </div>
+            </div>
+
+            <!-- CodeAlpha Internship -->
+            <div class="cert-card reveal reveal-delay-3">
+                <div class="cert-icon" style="background:linear-gradient(135deg,rgba(249,115,22,0.2),rgba(234,179,8,0.15));border-color:rgba(249,115,22,0.3);">💼</div>
+                <div class="cert-body">
+                    <h4>Frontend Development Internship</h4>
+                    <div class="cert-issuer" style="color:#f97316;"><i class="fa-solid fa-building"></i> CodeAlpha · MSME Certified</div>
+                    <div class="cert-date">📅 10 July – 10 August 2025</div>
+                    <div class="cert-tags" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.25);color:#fb923c;">HTML/CSS/JS</span>
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.25);color:#fb923c;">Virtual</span>
+                    </div>
+                    <span class="cert-no-link"><i class="fa-solid fa-id-card"></i> ID: CA/JU1/30468</span>
+                </div>
+            </div>
+
+            <!-- DigiSkills Freelancing -->
+            <div class="cert-card reveal reveal-delay-1">
+                <div class="cert-icon" style="background:linear-gradient(135deg,rgba(14,165,233,0.2),rgba(6,182,212,0.15));border-color:rgba(14,165,233,0.3);">🚀</div>
+                <div class="cert-body">
+                    <h4>Freelancing Training Certificate</h4>
+                    <div class="cert-issuer" style="color:#0ea5e9;"><i class="fa-solid fa-graduation-cap"></i> DigiSkills.pk · Govt of Pakistan</div>
+                    <div class="cert-date">📅 Aug – Nov 2025 · Issued 17 Dec 2025</div>
+                    <div class="cert-tags" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.25);color:#38bdf8;">Freelancing</span>
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(14,165,233,0.1);border:1px solid rgba(14,165,233,0.25);color:#38bdf8;">DSTP3.0</span>
+                    </div>
+                    <a href="https://digiskills.pk/verify" target="_blank" class="cert-verify">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify · ID: G3WXJMMK5
+                    </a>
+                </div>
+            </div>
+
+            <!-- University UI/UX Certificate -->
+            <div class="cert-card reveal reveal-delay-2">
+                <div class="cert-icon" style="background:linear-gradient(135deg,rgba(168,85,247,0.2),rgba(236,72,153,0.15));border-color:rgba(168,85,247,0.3);">🎨</div>
+                <div class="cert-body">
+                    <h4>UI/UX Design Certificate</h4>
+                    <div class="cert-issuer" style="color:#a855f7;"><i class="fa-solid fa-university"></i> University of Gujrat</div>
+                    <div class="cert-date">📅 2024–2025</div>
+                    <div class="cert-tags" style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px;">
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.25);color:#c084fc;">Figma</span>
+                        <span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.25);color:#c084fc;">UX Research</span>
+                    </div>
+                    <span class="cert-no-link"><i class="fa-solid fa-certificate"></i> University Certificate</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
